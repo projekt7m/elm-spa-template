@@ -1,4 +1,8 @@
 elm-stuff/
+node_modules/
+dist/
 
 *~
 .*.swp
+
+.idea
