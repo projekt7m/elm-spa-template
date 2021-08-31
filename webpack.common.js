@@ -35,6 +35,10 @@ module.exports = {
             'postcss-loader']
     },
     {
+      test: /\.scss$/,
+      use: ['style-loader', 'css-loader', 'sass-loader'],
+    },
+    {
       test: /\.html$/,
       exclude: /node_modules/,
       loader: 'file-loader'

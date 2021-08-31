@@ -34,7 +34,7 @@ view model =
         NotFound ->
             { title = "not found"
             , body =
-                [ p [] [ text "Hallo Welt!" ]
+                [ p [ class "h1" ] [ text "Hallo Welt!" ]
                 , br [] []
                 , img [ src (assetUrl "./Elm_logo.png"), alt "" ] []
                 ]
