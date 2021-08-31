@@ -2,19 +2,20 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const path = require("path");
 
 module.exports = {
   entry: {
     index: "./src/index.js",
-  },
-  output: {
-    filename: process.env.production ? '[name].[contenthash].css' : '[name].js'
   },
   optimization: {
     minimizer: [
       `...`,
       new CssMinimizerPlugin()
     ]
+  },
+  output: {
+    path: path.resolve(__dirname, "dist")
   },
   module: {
     rules: [{
@@ -37,18 +38,6 @@ module.exports = {
       test: /\.html$/,
       exclude: /node_modules/,
       loader: 'file-loader'
-    },
-    {
-      test: /\.(png|jpg|jpeg|svg)$/,
-      use: [
-        {
-          loader: 'url-loader',
-          options: {
-            limit: 8192,
-            name: process.env.production ? '[name].[contenthash].[ext]' : '[name].[ext]'
-          }
-        }
-      ]
     },
     {
       test: /\.elm$/,
@@ -76,9 +65,6 @@ module.exports = {
       template: 'src/index.ejs',
       xhtml: true
     }),
-    new CleanWebpackPlugin(),
-    new MiniCssExtractPlugin({
-      filename: process.env.production ? '[name].[contenthash].css' : '[name].css'
-    })
+    new CleanWebpackPlugin()
   ]
 }

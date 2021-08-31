@@ -3,8 +3,10 @@ module Main exposing (main)
 import Browser exposing (Document)
 import Browser.Navigation as Nav
 import Html exposing (..)
+import Html.Attributes exposing (..)
 import Json.Decode as Decode exposing (Value)
 import Url exposing (Url)
+import WebpackAsset exposing (assetUrl)
 
 
 type Model
@@ -30,7 +32,13 @@ view : Model -> Document Msg
 view model =
     case model of
         NotFound ->
-            { title = "not found", body = [ p [] [ text "Hallo Welt!" ] ] }
+            { title = "not found"
+            , body =
+                [ p [] [ text "Hallo Welt!" ]
+                , br [] []
+                , img [ src (assetUrl "./Elm_logo.png"), alt "" ] []
+                ]
+            }
 
 
 subscriptions : Model -> Sub Msg
