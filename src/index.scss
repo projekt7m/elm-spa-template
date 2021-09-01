@@ -2,3 +2,7 @@ $gradient: linear-gradient(to right, #00467f, #a5cc82);
 body {
   background-image: $gradient;
 }
+
+// $primary: rgb(255, 0, 192);
+
+@import "bootstrap/scss/bootstrap.scss";
