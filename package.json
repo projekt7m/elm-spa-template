@@ -19,7 +19,7 @@
     "@babel/preset-env": "^7.15.0",
     "autoprefixer": "^10.3.3",
     "babel-elm-assets-plugin": "^1.2.3",
-    "babel-loader": "^8.2.2",
+    "babel-loader": "^9.1.3",
     "clean-webpack-plugin": "^4.0.0-alpha.0",
     "css-loader": "^6.2.0",
     "css-minimizer-webpack-plugin": "^3.0.2",
