@@ -15,7 +15,7 @@
   "author": "Matthias Wimmer <m@tthias.eu>",
   "license": "UNLICENSED",
   "devDependencies": {
-    "@babel/core": "^7.15.0",
+    "@babel/core": "^7.23.9",
     "@babel/preset-env": "^7.23.9",
     "autoprefixer": "^10.4.17",
     "babel-elm-assets-plugin": "^1.2.3",
